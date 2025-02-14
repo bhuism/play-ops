@@ -1,0 +1,14 @@
+#!/bin/sh
+
+#set -x
+set -e
+
+rm -Rf clusterconfig
+talhelper validate talconfig talconfig.yaml
+talhelper genconfig -s secrets.yaml -c talconfig.yaml
+
+#generate kubeconfig, node should ne running
+#talosctl kubeconfig ./clusterconfig/kubeconfig -n 192.168.1.97 -e play.impl.nl --talosconfig=./clusterconfig/talosconfig
+
+talhelper gencommand apply --extra-flags "--dry-run"
+talhelper gencommand apply --extra-flags "-m reboot"

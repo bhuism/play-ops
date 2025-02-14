@@ -1,0 +1,18 @@
+repo:
+  url: https://github.com/bhuism/play.git
+  revision: main
+
+applications:
+  - name: argocd
+    app-namespace: argocd
+    namespace: argocd
+    path: argocd
+    manifest-paths: /argocd
+    sync-wave: "-5"
+
+  - name: root
+    app-namespace: argocd
+    namespace: argocd
+    path: apps
+    manifest-paths: /apps
+

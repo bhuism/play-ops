@@ -1,0 +1,65 @@
+argo-cd:
+  dex:
+    enabled: false
+  repoServer:
+    env:
+      - name: ARGOCD_EXEC_TIMEOUT
+        value: 300s
+    metrics:
+      enabled: false
+      serviceMonitor:
+        enabled: false
+
+  configs:
+    cm:
+      admin.enabled: true
+      application.resourceTrackingMethod: annotation+label
+      url: https://argocd.play.impl.nl
+    rbac:
+      policy.default: role:admin
+    params:
+      server.insecure: true
+
+  server:
+    redis:
+      metrics:
+        enabled: false
+    ingress:
+      enabled: true
+      ingressClassName: nginx
+      annotations:
+        kubernetes.io/ingress.class: nginx
+      hostname: argo.play.impl.nl
+      hosts:
+        - argo.play.impl.nl
+    extraArgs:
+      - --insecure
+    config:
+      repositories: |
+        - type: helm
+          name: stable
+          url: https://charts.helm.sh/stable
+        - type: helm
+          name: argo-cd
+          url: https://argoproj.github.io/argo-helm
+        - type: git
+          url: https://github.com/bhuism/play.git
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+    autoscaling:
+      enabled: true
+      minReplicas: 2
+      targetCPUUtilizationPercentage: 65
+      targetMemoryUtilizationPercentage: 65
+
+  controller:
+    replicas: 1
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+    args:
+      repoServerTimeoutSeconds: 300
+
