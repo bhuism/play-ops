@@ -1,9 +1,11 @@
 ---
 clusterName: play-ops
-talosVersion: v1.9.2
+talosVersion: v1.9.4
 kubernetesVersion: v1.32.0
 endpoint: https://play.impl.nl:6443
 allowSchedulingOnMasters: true
+cniConfig:
+  name: none
 additionalMachineCertSans:
   - play.impl.nl
   - 192.168.1.97
@@ -14,6 +16,13 @@ clusterPodNets:
   - 10.244.0.0/16
 clusterSvcNets:
   - 10.96.0.0/12
+
+patches:
+  - |-
+    - op: add 
+      path: /cluster/proxy
+      value:
+        disabled: true
 
 nodes:
   - hostname: node97

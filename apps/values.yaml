@@ -10,6 +10,16 @@ applications:
     manifest-paths: /argocd
     sync-wave: "-5"
 
+  - name: infrastructure
+    namespace: argocd
+    path: infrastructure/
+    sync-wave: "-4"
+
+  # - name: main
+  #   namespace: argocd
+  #   path: main/
+  #   sync-wave: "-3"
+
   - name: root
     app-namespace: argocd
     namespace: argocd

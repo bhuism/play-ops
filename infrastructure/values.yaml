@@ -1,0 +1,13 @@
+repo:
+  url: https://github.com/bhuism/play-ops.git
+  revision: main
+
+applications:
+  - name: cilium
+    app-namespace: argocd
+    namespace: kube-system
+    path: infrastructure/cilium
+    manifest-paths: /infrastructure/cilium
+    sync-wave: "-5"
+    helm:
+      enabled: true

@@ -11,4 +11,4 @@ talhelper genconfig -s secrets.yaml -c talconfig.yaml
 #talosctl kubeconfig ./clusterconfig/kubeconfig -n 192.168.1.97 -e play.impl.nl --talosconfig=./clusterconfig/talosconfig
 
 talhelper gencommand apply --extra-flags "--dry-run"
-talhelper gencommand apply --extra-flags "-m reboot"
+talhelper gencommand apply --extra-flags ""
