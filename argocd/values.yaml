@@ -36,12 +36,6 @@ argo-cd:
         enabled: false
     ingress:
       enabled: false
-      # ingressClassName: nginx
-      # annotations:
-      #   kubernetes.io/ingress.class: nginx
-      # hostname: argo.play.impl.nl
-      # hosts:
-      #   - argo.play.impl.nl
     extraArgs:
       - --insecure
     metrics:
