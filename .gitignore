@@ -1,3 +1,6 @@
 /clusterconfig
 /secrets.yaml
 *~
+*.lock
+**/charts/
+Chart.lock
