@@ -7,7 +7,7 @@ cilium:
   ipam:
     mode: kubernetes
     # https://github.com/cilium/cilium/issues/35811
-    # multiPoolPreAllocation: null
+    multiPoolPreAllocation: null
   l2announcements:
     enabled: true
   kubeProxyReplacement: true
