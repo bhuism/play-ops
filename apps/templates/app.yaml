@@ -1,4 +1,4 @@
-{⚠{- $repo := .Values.repo }}
+{{- $repo := .Values.repo }}
 {{- range $index, $app := .Values.applications }}
 {{- if index $app "create-namespace" }}
 ---
