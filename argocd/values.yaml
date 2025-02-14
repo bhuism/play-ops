@@ -19,6 +19,16 @@ argo-cd:
       policy.default: role:admin
     params:
       server.insecure: true
+    repositories:
+      helm:
+        type: helm
+        url: https://charts.helm.sh/stable
+      argo:
+        type: helm
+        url: https://argoproj.github.io/argo-helm
+      playops:
+        type: git
+        url: https://github.com/bhuism/play-ops.git
 
   server:
     redis:
@@ -34,25 +44,10 @@ argo-cd:
         - argo.play.impl.nl
     extraArgs:
       - --insecure
-    config:
-      repositories: |
-        - type: helm
-          name: stable
-          url: https://charts.helm.sh/stable
-        - type: helm
-          name: argo-cd
-          url: https://argoproj.github.io/argo-helm
-        - type: git
-          url: https://github.com/bhuism/play-ops.git
     metrics:
       enabled: true
       serviceMonitor:
         enabled: true
-#    autoscaling:
-#      enabled: true
-#      minReplicas: 2
-#      targetCPUUtilizationPercentage: 65
-#      targetMemoryUtilizationPercentage: 65
 
   controller:
     replicas: 1
@@ -62,4 +57,3 @@ argo-cd:
         enabled: true
     args:
       repoServerTimeoutSeconds: 300
-
