@@ -9,9 +9,13 @@ cniConfig:
 additionalMachineCertSans:
   - play.impl.nl
   - 192.168.1.97
+  - 192.168.1.98
+  - 192.168.1.99
 additionalApiServerCertSans:
   - play.impl.nl
   - 192.168.1.97
+  - 192.168.1.98
+  - 192.168.1.99
 clusterPodNets:
   - 10.244.0.0/16
 clusterSvcNets:
