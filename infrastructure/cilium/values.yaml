@@ -12,8 +12,8 @@ cilium:
     enabled: true
   kubeProxyReplacement: true
   enableIPv4Masquerade: false
-  loadBalancer:
-    acceleration: native
+#  loadBalancer:
+#    acceleration: native
     # mode: snat
     # dsrDispatch: opt
   routingMode: native
