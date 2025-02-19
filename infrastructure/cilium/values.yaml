@@ -11,7 +11,7 @@ cilium:
   l2announcements:
     enabled: true
   kubeProxyReplacement: true
-  enableIPv4Masquerade: false
+  # enableIPv4Masquerade: false
 #  loadBalancer:
 #    acceleration: native
     # mode: snat
