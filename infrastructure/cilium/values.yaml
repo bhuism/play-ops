@@ -22,8 +22,8 @@ cilium:
   k8sServiceHost: 127.0.0.1
   k8sServicePort: 7445
   autoDirectNodeRoutes: true
-#  bpf:
-#    masquerade: true
+  bpf:
+    masquerade: true
 #    hostLegacyRouting: false
 #    disableExternalIPMitigation: true
   securityContext:
