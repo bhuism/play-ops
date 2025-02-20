@@ -19,6 +19,7 @@ applications:
   - name: main
     namespace: argocd
     path: main/
+    manifest-paths: /main
     sync-wave: "-3"
 
   - name: root
