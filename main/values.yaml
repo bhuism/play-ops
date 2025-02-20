@@ -1,0 +1,15 @@
+repo:
+  url: https://github.com/bhuism/play-ops.git
+  revision: main
+
+applications:
+  - name: echo
+    app-namespace: argocd
+    namespace: echo
+    path: main/echo
+    manifest-paths: /main/echo
+    # helm:
+    #   enabled: true
+    
+
+
