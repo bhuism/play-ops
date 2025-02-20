@@ -17,8 +17,6 @@ cilium:
     # dsrDispatch: opt
   routingMode: native
   ipv4NativeRoutingCIDR: 10.244.0.0/14
-  loadBalancer:
-    acceleration: native
   k8sServiceHost: 127.0.0.1
   k8sServicePort: 7445
   autoDirectNodeRoutes: true
