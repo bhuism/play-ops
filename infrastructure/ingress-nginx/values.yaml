@@ -16,5 +16,4 @@ ingress-nginx:
     config:
       enable-brotli: "true"
       enable-ocsp: "true"
-      enable-real-ip: "true"
           
