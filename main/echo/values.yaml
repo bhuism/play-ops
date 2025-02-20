@@ -1,4 +1,4 @@
-echo:
+echo-server:
   ingress:
     enabled: true
     ingressClassName: nginx
