@@ -15,5 +15,5 @@ ingress-nginx:
         lbipam.cilium.io/sharing-key: "oneten"
     config:
       enable-brotli: "true"
-      enable-ocsp: "true"
+
           
