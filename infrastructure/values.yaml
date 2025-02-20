@@ -11,3 +11,13 @@ applications:
     sync-wave: "-5"
     helm:
       enabled: true
+  - name: ingress-nginx
+    app-namespace: argocd
+    namespace: ingress-nginx
+    path: infrastructure/ingress-nginx
+    manifest-paths: /infrastructure/ingress-nginx
+    sync-wave: "-4"
+    helm:
+      enabled: true
+    syncOptions:
+      - CreateNamespace=true

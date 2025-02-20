@@ -1,0 +1,15 @@
+ingress-nginx:
+  controller:
+    watchIngressWithoutClass: true
+    replicaCount: 3
+    minAvailable: 1
+    ingressClassResource:
+      default: true
+    metrics:
+      enabled: false
+      serviceMonitor:
+        enabled: false
+    service:
+      annotations:
+        lbipam.cilium.io/ips: "192.168.1.110"
+        lbipam.cilium.io/sharing-key: "oneten"
