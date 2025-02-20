@@ -8,8 +8,7 @@ applications:
     namespace: echo
     path: main/echo
     manifest-paths: /main/echo
+    syncOptions:
+      - CreateNamespace=true
     # helm:
     #   enabled: true
-    
-
-
