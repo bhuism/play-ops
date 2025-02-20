@@ -11,14 +11,12 @@ cilium:
   l2announcements:
     enabled: true
   kubeProxyReplacement: true
-  # enableIPv4Masquerade: false
 #  loadBalancer:
 #    acceleration: native
     # mode: snat
     # dsrDispatch: opt
   routingMode: native
   ipv4NativeRoutingCIDR: 10.244.0.0/14
-  # tunnelProtocol: geneve
   k8sServiceHost: 127.0.0.1
   k8sServicePort: 7445
   autoDirectNodeRoutes: true
