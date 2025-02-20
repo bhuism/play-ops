@@ -35,19 +35,22 @@ argo-cd:
       metrics:
         enabled: false
     ingress:
-      enabled: false
+      enabled: true
+      ingressClassName: nginx
+      hostname: argocd.play.impl.nl
     extraArgs:
       - --insecure
     metrics:
-      enabled: true
+      enabled: false
       serviceMonitor:
-        enabled: true
+        enabled: false
+
 
   controller:
     replicas: 1
     metrics:
-      enabled: true
+      enabled: false
       serviceMonitor:
-        enabled: true
+        enabled: false
     args:
       repoServerTimeoutSeconds: 300
