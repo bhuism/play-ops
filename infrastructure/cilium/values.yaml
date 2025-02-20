@@ -11,10 +11,8 @@ cilium:
   l2announcements:
     enabled: true
   kubeProxyReplacement: true
-#  loadBalancer:
-#    acceleration: native
-    # mode: snat
-    # dsrDispatch: opt
+  loadBalancer:
+    mode: hybrid
   routingMode: native
   ipv4NativeRoutingCIDR: 10.244.0.0/14
   k8sServiceHost: 127.0.0.1
